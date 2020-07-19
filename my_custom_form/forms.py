@@ -5,4 +5,4 @@ class MyModelForm(forms.ModelForm):
     class Meta:
         fields = ('location', 'location_lat', 'location_lon', )
         model = MyModel
-        
+        template_name =  'mymodel_form.html'
