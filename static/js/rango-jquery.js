@@ -1,6 +1,3 @@
-$(document).ready(function() {
-
-        // JQuery code 
 import {fromLonLat} from 'ol/proj';
 import shiftKeyOnly from 'ol/events';
 import 'ol/ol.css';
@@ -12,6 +9,9 @@ import {OSM, Vector as VectorSource} from 'ol/source';
 import {Circle as CircleStyle, Fill, Stroke, Style} from 'ol/style';
 import Point from 'ol/geom/Point';
 import Feature from 'ol/Feature';
+
+
+
 
 function load() {
         console.log("load event detected!");
@@ -45,7 +45,10 @@ window.onload = function(){
 		  })
 		});
 		
-		var typeSelect = $('#type');
+		document.getElementById("p1").addEventListener("click", myFunction);
+		document.getElementById("p2").addEventListener("click", p2);
+		
+		var typeSelect = document.getElementById('type');
 		var draw, snap; 
 		
 		function addInteraction() {
@@ -69,7 +72,7 @@ window.onload = function(){
 				
 				if( source.getFeatures().length >=2){
 					map.removeInteraction(draw);
-					$('#type').value='None';
+					document.getElementById('type').value='None';
 				}
 			});
 			
@@ -90,21 +93,21 @@ window.onload = function(){
 		map.addInteraction(modify);
 		
 		//czyszczenie narysowanych elementów
-		$("#p2").click( function(event) {
-        source.clear();
-        siedziba = 0;
-    });
-
+		function p2(){
+			source.clear();
+			siedziba = 0;
+		}
+		
 		  
 		//funkcja pobierająca adres:
-		$("#p1").click( function(event) {
-        
+		function myFunction(){
+			
 			//TODO centrowanie mapy na wpisanym adresie!
 			console.log(siedziba);
 			
 			if(siedziba < 1){
 						
-				var x = $('#adres').value;				
+				var x = document.getElementById("adres").value;				
 				var query = 'https://nominatim.openstreetmap.org/search?q='+x+'&format=jsonv2&polygon=1&addressdetails=1'			
 					
 				//nie wiem jak pogodzić zakresy JQuery z JS ale działa
@@ -125,7 +128,7 @@ window.onload = function(){
 				
 			}
 			
-		});	
+		}	
 
 		  
 }
@@ -143,6 +146,3 @@ window.onload = function(){
 
 
 
-
-
-});
