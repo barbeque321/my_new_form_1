@@ -8,6 +8,6 @@ class User(models.Model):
     adress = models.CharField(max_length=40, blank=True)
 
 class MyModel(models.Model):
-    location = OSMField(lat_field='latitude', lon_field='longitude')
+    location = OSMField()
     location_lat = LatitudeField()
     location_lon = LongitudeField()
