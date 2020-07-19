@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from my_custom_form.views import UserCreateView
+from my_custom_form.views import MyCreateView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', UserCreateView.as_view())
+    path('', MyCreateView.as_view())
 ]
