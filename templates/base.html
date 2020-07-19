@@ -1,49 +1,26 @@
 
-{% load static %}
-<!doctype html>
+{% load static %}<!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<meta charset="utf-8">
+    
+    <script type="text/javascript" src="{% static 'js/jquery-2.1.0.min.js' %}"></script>
+	  <meta charset="utf-8">
     <title>ModneKodyWprostZeSrody</title>
-	  <style>
-      #map {
-        width: 90%;
-        height: 400px;
-      }
-    </style>
+	  
   </head>
+  
   <body>
-<script src="  {% static 'jquery.js'       %}"></script>
-<script   src="  {% static 'rango-jquery.js' %}"></script>
-	  <div id="map"></div>
 
-    <div class="container d-flex h-100">
-      <div class="row justify-content-center">
-        <div class="col-10">
-          <h1> My_Form_God_Damn_It </h1>
-          {% block main %}
-          {% endblock %}
-        </div>
-      </div>
-    </div>
+      <link href="{% static 'css/leaflet.css' %}" type="text/css" media="screen" rel="stylesheet" />
+      <link href="{% static 'css/osm_field.css' %}" type="text/css" media="screen" rel="stylesheet" />
+      <script type="text/javascript" src="{% static 'js/leaflet.js' %}"></script>
+      <script type="text/javascript" src="{% static 'js/osm_field.js' %}"></script>
+      <form action="" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Save" />
+      </form>
 
-    <label for="adres">Adres:</label>
-  <input type="text" id="adres">
-  <!-- <label for="nrdomu">Numer domu:</label> -->
-  <!-- <input type="text" id="nrdomu"><br> -->
-  <button type="button" id ="p1">Przeslij</button>
-  <button type="button" id ="p2">Wyczyść</button>
-
-  <form class="form-inline">
-      <label>Geometry type &nbsp;</label>
-      <select id="type">
-        <option value="None">Brak</option>
-        <option value="Polygon">Polygon</option>
-        <option value="Circle">Koło</option>  
-    <!-- <option value="Point">Punkt</option>    -->
-      </select>
-    </form>
 
   </body>
   

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'my_custom_form',
     'crispy_forms',
+    'osm_field',
 ]
 
 MIDDLEWARE = [
