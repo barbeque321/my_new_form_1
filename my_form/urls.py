@@ -20,5 +20,5 @@ from my_custom_form.views import MyCreateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', MyCreateView.as_view())
+    path('', MyCreateView.as_view(), name='hello_form')
 ]

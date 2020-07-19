@@ -1,13 +1,13 @@
 from django.shortcuts import render
 from django.views.generic import CreateView
-from .models import User
+# from .models import User
 from .forms import MyModelForm
 from .models import MyModel
 
-class UserCreateView(CreateView):
-    model = User
-    template_name =  'login.html'
-    fields = ('city_name', 'street_name', 'adress')
+# class UserCreateView(CreateView):
+#     model = User
+#     template_name =  'login.html'
+#     fields = ('city_name', 'street_name', 'adress')
 
 
 
