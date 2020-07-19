@@ -3,7 +3,6 @@
 {% block content %}
 <div id="map" style="height:512px; width:512px; align: center;"></div>
 
-  {{ form.media }}
   <form action="" method="post">
   {% csrf_token %}
   {{ form.as_p }}
