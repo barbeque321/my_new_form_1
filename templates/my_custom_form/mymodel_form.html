@@ -1,13 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div id="mapid" style="height:512px; width:512px; align: center;"></div>
-<script> 
-    var mymap = L.map('mapid').setView( [ {{ lat }}, {{ lon }} ], {{ span }} );
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(mymap);
- </script>
+<div id="map" style="height:512px; width:512px; align: center;"></div>
+
   {{ form.media }}
   <form action="" method="post">
   {% csrf_token %}
