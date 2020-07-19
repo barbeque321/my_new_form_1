@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<meta charset="utf-8">
     <title>ModneKodyWprostZeSrody</title>
-	
 	  <style>
       #map {
         width: 90%;
@@ -17,6 +16,7 @@
   <body>
 
 	  <div id="map"></div>
+
     <div class="container d-flex h-100">
       <div class="row justify-content-center">
         <div class="col-10">
@@ -26,12 +26,14 @@
         </div>
       </div>
     </div>
+
     <label for="adres">Adres:</label>
   <input type="text" id="adres">
   <!-- <label for="nrdomu">Numer domu:</label> -->
   <!-- <input type="text" id="nrdomu"><br> -->
   <button type="button" id ="p1">Przeslij</button>
   <button type="button" id ="p2">Wyczyść</button>
+
   <form class="form-inline">
       <label>Geometry type &nbsp;</label>
       <select id="type">
@@ -41,6 +43,7 @@
     <!-- <option value="Point">Punkt</option>    -->
       </select>
     </form>
+    
   </body>
   <script src="  {% static 'js/jquery.js'       %}"></script>
 <script   src="  {% static 'js/rango-jquery.js' %}"></script>
